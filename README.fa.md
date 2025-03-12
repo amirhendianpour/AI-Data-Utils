@@ -1,6 +1,6 @@
 # AI-Data-Utils
 
-[🇬🇧 English Version](#english-version) | [🇮🇷 نسخه فارسی](#نسخه-فارسی)
+[🇬🇧 English](README.md) | [🇮🇷 فارسی](README.fa.md)
 
 ---
 
