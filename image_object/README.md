@@ -1,68 +1,73 @@
-# Object Detection with OpenCV and YOLO
+# Object Detection and YOLO Coordinate Extraction with OpenCV
 
 [🇮🇷 فارسی](README.fa.md) | [🇬🇧 English](README.md)
 
-This Python script uses OpenCV to detect objects in images and saves their coordinates in a format suitable for use with YOLO (You Only Look Once).
+This project is a Python script that uses the OpenCV library to detect objects in an image, draw bounding boxes around them, and save their relative coordinates in the YOLO format.
 
-## Description
+## Prerequisites
 
-This script is designed to identify objects within an input image and then extract their bounding box coordinates for further processing or model training. Here's a breakdown of how it works:
+To run this code, you need the following installed:
 
-1.  **Import Libraries:** The script begins by importing the necessary libraries: OpenCV (`cv2`) and PIL for image operations.
+- Python 3.x
+- OpenCV (`opencv-python`)
+- NumPy (installed by default with OpenCV)
 
-2.  **Read Image:** The input image is read using `cv2.imread()` from the path specified by the `image_path` variable.
+### Installation
+Run the following command in your terminal or command line:
+```bash
+pip install opencv-python
+```
 
-3.  **Pre-processing:**
-    * The color image is converted to grayscale to simplify edge detection.
-    * An inverse binary threshold is applied to the grayscale image to obtain clear edges for contour detection.
+## How the Code Works
 
-4.  **Contour Detection:** The `cv2.findContours()` function is used to extract the contours of objects in the thresholded image. These contours represent the boundaries of the objects.
+1. **Input**: An image in JPG format (in this code, `3.jpg` is used as the input).
+2. **Processing**:
+   - The image is converted to grayscale for better edge detection.
+   - Contours are extracted using thresholding.
+   - Bounding boxes are drawn around detected objects.
+3. **Filtering**:
+   - Objects that are too small (less than 1% of the image area) or too large (more than 90% of the image area) are ignored.
+4. **Output**:
+   - The final image with green bounding boxes around objects is displayed.
+   - Relative coordinates of the objects are saved in the `coordinates.txt` file in YOLO format.
 
-5.  **Bounding Box Filtering and Drawing:**
-    * The script iterates through the detected contours.
-    * Contours smaller than 100x100 pixels and larger than 640x640 pixels are ignored to filter out noise or irrelevant objects.
-    * For each remaining contour, the script calculates a rectangular bounding box using `cv2.boundingRect()`.
-    * This bounding box is then drawn on the original image as a green rectangle with a thickness of 2 pixels.
+## Output File Structure (`coordinates.txt`)
+Coordinates are saved in the following format, suitable for YOLO:
+```
+<class_id> <x_center> <y_center> <width> <height>
+```
+- `<class_id>`: Class identifier (defaulted to 0 in this code).
+- `<x_center>` and `<y_center>`: Relative center coordinates of the bounding box based on image width and height.
+- `<width>` and `<height>`: Relative width and height of the bounding box.
 
-6.  **Display Results:** The modified image with the bounding boxes is displayed in a window using `cv2.imshow()`. The script waits for a key press (`cv2.waitKey(0)`) before closing all open windows (`cv2.destroyAllWindows()`).
+Example:
+```
+0 0.45 0.50 0.20 0.30
+```
 
-7.  **Save Coordinates:**
-    * Finally, the script saves the coordinates of the bounding boxes to a text file named `coordinates.txt`.
-    * Each line in the file represents one detected object and contains its coordinates (x, y, width, height) separated by commas. This format is suitable for use with object detection algorithms like YOLO, which require bounding box coordinates for training or prediction.
+## How to Run
 
-## Requirements
+1. Place your desired image (e.g., `3.jpg`) in the same directory as the script.
+2. Run the code:
+   ```bash
+   python script.py
+   ```
+3. The output image with detected bounding boxes will be displayed. Press any key to close the window.
+4. The `coordinates.txt` file will be created in the same directory.
 
-* Python 3.x
-* OpenCV (`cv2`)
-* PIL (Pillow)
+## Important Notes
+- Update the image file path (`image_path`) as needed.
+- The minimum area threshold (`min_area`) and maximum area (90% of the image) can be adjusted.
+- If an error occurs (e.g., image not found), an error message will be displayed.
 
-## How to Use
+## Troubleshooting
+- **"Image not found" error**: Ensure the `3.jpg` file exists in the correct directory.
+- **"cv2 module not found" error**: Install OpenCV using `pip install opencv-python`.
 
-1.  Ensure you have Python 3.x installed.
-2.  Install OpenCV and PIL via pip:
+## Future Improvements
+- Add support for assigning different classes to objects.
+- Enable processing of multiple images (e.g., from a folder).
+- Enhance object filtering with more advanced algorithms.
 
-    \`\`\`
-    pip install opencv-python
-    pip install Pillow
-    \`\`\`
-3.  Run the Python script.
-
-## Input
-
-* The script takes an input image, the path to which is specified by the `image_path` variable. By default, it is set to '3.jpg'.
-
-## Output
-
-The script produces two forms of output:
-
-1.  **Visual Display:** A window will appear, showing the original image with green bounding boxes drawn around the detected objects.
-2.  **Text File Output:** A text file named `coordinates.txt` is created in the same directory as the script. This file contains the coordinates of the detected bounding boxes, with each object on a new line in the format "x, y, width, height".
-
-## Parameters
-
-* `image_path`: The path to the input image.
-* `cv2.threshold(gray_image, 128, 255, cv2.THRESH_BINARY_INV)`: The threshold value (128) might need adjustment.
-* `if w - x > 100 and h - y > 100:`: The minimum bounding box size.
-* `if w - x == 640 and h - y == 640:`: The maximum bounding box size.
-* `cv2.rectangle(output_image, (x, y), (x + w, y + h), (0, 255, 0), 2)`: The rectangle color and thickness.
-* `with open('coordinates.txt', 'w') as file:`: The output file name.
+## Author
+This code was written by Amir Hendianpour. For questions or suggestions, feel free to contact me!
