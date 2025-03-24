@@ -84,4 +84,3 @@ pip install -r requirements.txt
 If you’d like to contribute to this project, feel free to submit a pull request or report issues in the Issues section.
 
 ## License
-test
