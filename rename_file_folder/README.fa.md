@@ -48,4 +48,4 @@
 ```  
 
 ## توسعه‌دهنده  
-- [نام شما] - [ایمیل شما](mailto:amir.hendianpour@gmail.com)  
+- [امیر] - [ایمیل شما](mailto:amir.hendianpour@gmail.com)  

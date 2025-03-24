@@ -48,4 +48,4 @@ It processes each folder and renames images sequentially as `lol1.jpg`, `lol2.jp
 ```
 
 ## Developer
-- [Your Name] - [Your Email](mailto:amir.hendianpour@gmail.com)
+- [Amir] - [Your Email](mailto:amir.hendianpour@gmail.com)
