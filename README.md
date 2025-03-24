@@ -84,3 +84,4 @@ pip install -r requirements.txt
 If you’d like to contribute to this project, feel free to submit a pull request or report issues in the Issues section.
 
 ## License
+This project, **AI-Data-Utils**, is licensed under a custom license designed to balance open-source accessibility with commercial control. The full terms can be found in the [LICENSE](LICENSE) file. In summary, it allows non-commercial use, modification, and distribution (e.g., for personal, research, or open-source projects), while prohibiting commercial use by anyone other than the owner, **Amir Hendianpour**, without explicit permission. The owner retains the right to develop and use advanced versions commercially without releasing their source code.

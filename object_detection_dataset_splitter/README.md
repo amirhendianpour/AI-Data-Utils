@@ -75,8 +75,3 @@ This script is designed for **splitting object detection datasets** into three s
 - Filenames are hashed to **prevent duplication and conflicts**.
 - `.txt` label files (containing **YOLO annotations**) are moved along with their corresponding images.
 - A warning is displayed if a **label file is missing**.
-
----
-
-## **License**
-

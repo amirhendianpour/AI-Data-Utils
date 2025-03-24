@@ -54,5 +54,3 @@ and displays their file paths along with their sizes.
 
 ## Developer
 - [Your Name] - [Your Email](mailto:amir.hendianpour@gmail.com)
-
-## License

@@ -61,5 +61,3 @@ D:\data_orange\out\
 ## Notes
 - The script ensures that the sum of ratios equals 100%.
 - If a class folder contains no images, a warning will be displayed.
-
-## License

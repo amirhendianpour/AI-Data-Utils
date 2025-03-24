@@ -49,5 +49,3 @@
 
 ## توسعه‌دهنده  
 - [نام شما] - [ایمیل شما](mailto:amir.hendianpour@gmail.com)  
-
-## لایسنس  

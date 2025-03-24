@@ -44,5 +44,3 @@ It ensures that folder names are standardized and avoids conflicts with case-sen
 
 ## Developer
 - [Your Name] - [Your Email](mailto:amir.hendianpour@gmail.com)
-
-## License

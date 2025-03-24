@@ -66,6 +66,4 @@
 ```
 
 ## توسعه‌دهنده
-- [نام شما] - [ایمیل شما](mailto:amir.hendianpour@gmail.com)
-
-## لایسنس
+- [امیر] - [ایمیل شما](mailto:amir.hendianpour@gmail.com)

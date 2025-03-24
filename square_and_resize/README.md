@@ -67,5 +67,3 @@ It supports the following image formats:
 
 ## Developer
 - [Amir] - [Your Email](mailto:amir.hendianpour@gmail.com)
-
-## License
