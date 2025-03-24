@@ -66,6 +66,3 @@ This script performs **image augmentation** by applying **rotation** and **brigh
 - It prevents overwriting by appending `_rotated` or `_brighter` to filenames.
 - If an image fails to load, a warning is displayed.
 
----
-
-## **License**
